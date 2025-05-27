@@ -26,3 +26,11 @@ Just run :
 curl -X POST APIURL -H "Content-Type: application/json" -d @payload.json
 
 CICD I will  just discuss during interview but it would be pretty standard plan trigger on upload , apply triggered on merge with manual approval
+
+by the way yes I know - should have used remote backed and give access to my github workflow to that bucket by setting up secrets in the repository  - trust me I know 
+
+in my head it's enough that I know that I needed to do it and can do it / talk about it 
+
+also I started this task at 5:30 today and it's 7:12 - I think 1.5hr of effort is fair enough
+
+thank you !
