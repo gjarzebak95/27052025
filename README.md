@@ -1,1 +1,18 @@
 # 27052025
+
+Ok so my logic after looking at the task is the following : 
+
+I will use modules from tf repo because that's how I would do it in real life - will try to keep the resource blocks to minimal
+
+For lambda function a simple python script using boto3 library will do
+
+
+Lambda will have to access s3 and it will be in private vpc so I will use a vpc endpoint for that
+
+Of course permissions to access bucket - will give in the role
+
+I see here deployment process and automation
+
+I might do a simple cicd pipeline for the terraform code I create that will always run a plan,fmt,validate and allow me run apply on main branch depending on how I am with time
+
+Ok this is my first commit - let's go I will try my commits to be documentation
