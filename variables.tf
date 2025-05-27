@@ -40,4 +40,16 @@ variable "security_group_name" {
   description = "Name of the Lambda security group"
   type        = string
   default     = "lambda_security_group"
-} 
+}
+
+variable "api_name" {
+  description = "Name of the API Gateway"
+  type        = string
+  default     = "27052025-image-api"
+}
+
+variable "api_stage_name" {
+  description = "Name of the API Gateway stage"
+  type        = string
+  default     = "prod"
+}
