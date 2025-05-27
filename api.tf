@@ -1,5 +1,5 @@
 module "api_gateway" {
-  source = "terraform-aws-modules/apigateway-v2/aws"
+  source  = "terraform-aws-modules/apigateway-v2/aws"
   version = "2.2.2"
 
   name          = var.api_name
@@ -12,23 +12,23 @@ module "api_gateway" {
     allow_headers = ["content-type"]
     allow_methods = ["POST"]
     allow_origins = var.cors_allowed_origins
-    max_age      = 300
+    max_age       = 300
   }
 
   # Routes and integrations
   integrations = {
     "POST /upload" = {
-      integration_type    = "AWS_PROXY"
-      integration_uri     = aws_lambda_function.image_upload.invoke_arn
-      integration_method  = "POST"
-      connection_type    = "INTERNET"
+      integration_type       = "AWS_PROXY"
+      integration_uri        = aws_lambda_function.image_upload.invoke_arn
+      integration_method     = "POST"
+      connection_type        = "INTERNET"
       payload_format_version = "2.0"
     }
   }
 
   # Stage
   default_stage_access_log_destination_arn = null
-  default_stage_access_log_format         = null
+  default_stage_access_log_format          = null
 
   default_route_settings = {
     detailed_metrics_enabled = true
@@ -37,7 +37,7 @@ module "api_gateway" {
   }
 
   tags = {
-    Name        = var.api_name
+    Name = var.api_name
   }
 }
 

@@ -5,11 +5,11 @@ locals {
 resource "aws_lambda_function" "image_upload" {
   filename         = local.lambda_zip_path
   function_name    = var.lambda_function_name
-  role            = aws_iam_role.lambda_s3_role.arn
-  handler         = "lambda_function.handler"
-  runtime         = var.lambda_runtime
-  timeout         = var.lambda_timeout
-  memory_size     = var.lambda_memory_size
+  role             = aws_iam_role.lambda_s3_role.arn
+  handler          = "lambda_function.handler"
+  runtime          = var.lambda_runtime
+  timeout          = var.lambda_timeout
+  memory_size      = var.lambda_memory_size
   source_code_hash = filebase64sha256(local.lambda_zip_path)
 
   vpc_config {
@@ -24,7 +24,7 @@ resource "aws_lambda_function" "image_upload" {
   }
 
   tags = {
-    Name        = var.lambda_function_name
+    Name = var.lambda_function_name
   }
 }
 
@@ -42,6 +42,6 @@ resource "aws_security_group" "lambda_sg" {
   }
 
   tags = {
-    Name        = var.security_group_name
+    Name = var.security_group_name
   }
 }
