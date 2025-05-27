@@ -16,3 +16,13 @@ I see here deployment process and automation
 I might do a simple cicd pipeline for the terraform code I create that will always run a plan,fmt,validate and allow me run apply on main branch depending on how I am with time
 
 Ok this is my first commit - let's go I will try my commits to be documentation
+
+
+
+I have just tested uploading an image and it works - will put that image to repo 
+
+Just run : 
+
+curl -X POST APIURL -H "Content-Type: application/json" -d @payload.json
+
+CICD I will  just discuss during interview but it would be pretty standard plan trigger on upload , apply triggered on merge with manual approval
